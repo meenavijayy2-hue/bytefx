@@ -358,9 +358,9 @@ function Markets() {
           <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">One platform. Global markets. Endless opportunities.</h2>
           <p className="mt-4 text-muted-foreground">Curated market hubs with live data, institutional insights and on-demand education to sharpen every trade.</p>
         </div>
-        <a href="#" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90">
+        <Link to="/auth" search={{ mode: "signup" }} className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90">
           Get started <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
       <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {markets.map((m, i) => (
