@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   ArrowRight,
@@ -143,10 +143,10 @@ function Nav() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground">Log in</a>
-          <a href="#" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
+          <Link to="/auth" search={{ mode: "login" }} className="text-sm text-muted-foreground hover:text-foreground">Log in</Link>
+          <Link to="/auth" search={{ mode: "signup" }} className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
             Sign up <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -156,7 +156,7 @@ function Nav() {
         <div className="border-t border-border md:hidden">
           <div className="flex flex-col gap-3 px-6 py-4">
             {links.map((l) => <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className="text-sm text-muted-foreground">{l}</a>)}
-            <a href="#" className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Sign up</a>
+            <Link to="/auth" search={{ mode: "signup" }} onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Sign up</Link>
           </div>
         </div>
       )}
@@ -285,9 +285,9 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#" className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-90 ${p.featured ? "bg-primary text-primary-foreground" : "border border-border bg-surface-2"}`}>
+            <Link to="/auth" search={{ mode: "signup" }} className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-90 ${p.featured ? "bg-primary text-primary-foreground" : "border border-border bg-surface-2"}`}>
               Open account <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
@@ -358,9 +358,9 @@ function Markets() {
           <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">One platform. Global markets. Endless opportunities.</h2>
           <p className="mt-4 text-muted-foreground">Curated market hubs with live data, institutional insights and on-demand education to sharpen every trade.</p>
         </div>
-        <a href="#" className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90">
+        <Link to="/auth" search={{ mode: "signup" }} className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90">
           Get started <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
       <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {markets.map((m, i) => (
