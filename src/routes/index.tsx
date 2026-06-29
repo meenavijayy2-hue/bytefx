@@ -156,7 +156,7 @@ function Nav() {
         <div className="border-t border-border md:hidden">
           <div className="flex flex-col gap-3 px-6 py-4">
             {links.map((l) => <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setOpen(false)} className="text-sm text-muted-foreground">{l}</a>)}
-            <a href="#" className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Sign up</a>
+            <Link to="/auth" search={{ mode: "signup" }} onClick={() => setOpen(false)} className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground">Sign up</Link>
           </div>
         </div>
       )}
