@@ -285,9 +285,9 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <a href="#" className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-90 ${p.featured ? "bg-primary text-primary-foreground" : "border border-border bg-surface-2"}`}>
+            <Link to="/auth" search={{ mode: "signup" }} className={`mt-8 inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-90 ${p.featured ? "bg-primary text-primary-foreground" : "border border-border bg-surface-2"}`}>
               Open account <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
+            </Link>
           </div>
         ))}
       </div>
