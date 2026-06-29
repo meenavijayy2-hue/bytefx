@@ -143,10 +143,10 @@ function Nav() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
-          <a href="#" className="text-sm text-muted-foreground hover:text-foreground">Log in</a>
-          <a href="#" className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
+          <Link to="/auth" search={{ mode: "login" }} className="text-sm text-muted-foreground hover:text-foreground">Log in</Link>
+          <Link to="/auth" search={{ mode: "signup" }} className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
             Sign up <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
         <button className="md:hidden" onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
